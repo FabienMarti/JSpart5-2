@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Part 5 Ex 1</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+        <form name="login">
+            <div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmer le mot de passe">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" onclick="checkPass();">Confirmer</button>
+        </form>
+
+        <script>
+            function checkPass() {
+                var loginForm = document.forms.login;
+                var pass = document.getElementById('password').value, confirmPass = document.getElementById('confirmPassword').value;
+                if (pass == confirmPass) {
+                    loginForm.elements.password.style.borderColor = 'green';
+                    loginForm.elements.confirmPassword.style.borderColor = 'green';
+                    event.preventDefault();
+                } else {
+                    loginForm.elements.password.style.borderColor = 'red';
+                    loginForm.elements.confirmPassword.style.borderColor = 'red';
+                    event.preventDefault();
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
